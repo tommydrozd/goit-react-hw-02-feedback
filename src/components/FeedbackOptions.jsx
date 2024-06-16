@@ -1,29 +1,18 @@
-function FeedbackOptions({ onClickButtons }) {
-  return (
-    <div className="btn-wrapper">
-      <button
-        className="btn btn-good"
-        type="button"
-        onClick={e => onClickButtons(e.target.textContent)}
-      >
-        Good
-      </button>
-      <button
-        className="btn btn-neutral"
-        type="button"
-        onClick={e => onClickButtons(e.target.textContent)}
-      >
-        Neutral
-      </button>
-      <button
-        className="btn btn-bad"
-        type="button"
-        onClick={e => onClickButtons(e.target.textContent)}
-      >
-        Bad
-      </button>
-    </div>
-  );
-}
+import { Children, Component } from "react";
+import PropTypes from "prop-types";
 
-export default FeedbackOptions;
+export default class Section extends Component {
+  static propTypes = {
+    options: PropTypes.object,
+  };
+
+  render() {
+    return (
+      <>
+        <button onClick={this.props.options.cGood}>Good</button>
+        <button onClick={this.props.options.cNeutral}>Neutral</button>
+        <button onClick={this.props.options.cBad}>Baaaad</button>
+      </>
+    );
+  }
+}
