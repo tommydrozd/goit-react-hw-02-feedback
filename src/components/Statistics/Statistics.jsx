@@ -1,7 +1,7 @@
 import { Children, Component } from "react";
 import PropTypes from "prop-types";
 
-export default class Section extends Component {
+export default class Statistics extends Component {
   static propTypes = {
     good: PropTypes.number,
     neutral: PropTypes.number,

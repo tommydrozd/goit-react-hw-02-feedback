@@ -1,8 +1,10 @@
-import { Component } from "react";
-import Section from "./Section";
-import FeedbackOptions from "./FeedbackOptions";
-import Statistics from "./Statistics";
-import Notification from "./Notification";
+import { Component } from 'react';
+import React from 'react';
+import Statistics from '../Statistics/Statistics.jsx';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions.jsx';
+import Section from '../Section/Section.jsx';
+import Notification from '../Notification/Notification.jsx';
+import GlobalStyle from '../../GlobalStyles';
 
 class App extends Component {
   state = { good: 0, neutral: 0, bad: 0, total: 0, positivePercentage: 0 };
@@ -44,6 +46,7 @@ class App extends Component {
   render() {
     return (
       <>
+        <GlobalStyle /> {/* Apply global styles */}
         <Section title="Please leave feedback">
           <FeedbackOptions options={this.counters} />
           {this.state.total > 0 ? (
